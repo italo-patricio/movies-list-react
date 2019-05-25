@@ -1,0 +1,20 @@
+@Host = https://api.themoviedb.org/3
+@API_KEY_V3 = 8f790a3ea1ddedadd971a756e10385ec
+@TOKEN_V4 = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Zjc5MGEzZWExZGRlZGFkZDk3MWE3NTZlMTAzODVlYyIsInN1YiI6IjVjZTVmYWNiMGUwYTI2NWFjMGNlMTc3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.m83RGMikxcflQeFDk0FX37wsSdMurgmavLZzQLxBHgs
+
+@LANGUAGE = pt-BR
+
+
+### Get movies
+GET {{Host}}/movie/76341?api_key={{API_KEY_V3}}&language=pt-BR HTTP/1.1
+
+
+### Get image with language
+GET {{Host}}/movie/550/images?api_key={{API_KEY_V3}}&language=pt-BR&include_image_language=pt,null HTTP/1.1
+
+### 
+GET {{Host}}/tv/on_the_air?api_key={{API_KEY_V3}}&language=pt-BR HTTP/1.1
+
+
+### Get movies popular
+GET {{Host}}/movie/popular?api_key={{API_KEY_V3}}&language=pt-BR HTTP/1.1
