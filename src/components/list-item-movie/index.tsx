@@ -2,6 +2,9 @@ import React from 'react';
 import {Movie} from "../../interfaces/movie";
 import {Config} from "../../config/app-config";
 import styled from "styled-components";
+import Img from '../Img';
+import Button from '../button';
+import { Link } from 'react-router-dom';
 
 const ItemMovie = styled.div`
    background: #fff;
@@ -20,43 +23,16 @@ const ItemMovie = styled.div`
    
 `;
 
-interface ImageProp {
-    src: string;
-    width?: string;
-    height?: string;
-
-}
-
-const Img = styled.img`
-  src: ${(props: ImageProp) => props.src};
-  width: ${(props: ImageProp) => props.width || '150px'};
-  height: ${(props: ImageProp) => props.height || '200px'};
-`;
 
 const SubTitle = styled.p`
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    font-size: 14px; 
 `;
 
-const Button = styled.button`
-    background: palevioletred;
-    color: #fff;
-    height: 40px;
-    display: inline-block;
-    font-size: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
-    display: flex;
-    cursor: pointer;
-    :hover {
-       background: #afafaf;
-       color: #fff;       
-   }
-`;
 
 export interface ListItemMovieProp {
     movie: Movie;
+    handleClick?: any;
 }
 
 const ListItemMovie = (props: ListItemMovieProp ) => {
@@ -64,7 +40,8 @@ const ListItemMovie = (props: ListItemMovieProp ) => {
   return <ItemMovie>
             <Img src={`${Config.API_URL_IMAGE}/w200/${movie.poster_path}`} />
             <SubTitle>{movie.title }</SubTitle>
-            <Button>Ver detalhes</Button>    
+            <Button to={`/movie/${movie.id}`}>Ver detalhes</Button>    
+            
         </ItemMovie>;
 }
 

@@ -4,6 +4,7 @@ import './App.css';
 import { Header } from './components'
 import MainPage from "./pages/main";
 import styled from "styled-components";
+import Routes from "./routes";
 
 const ContainerApp = styled.div``;
 
@@ -19,9 +20,9 @@ const App = () => {
   return (
    <ContainerApp>
       <Header />
-      <MainPage />
+      <Routes />
       <Footer>
-        <p>Desenvolvido por <a href="mailto://italopatriciosouza@hotmail.com">Ítalo Patrício</a></p>
+        <p>Desenvolvido por <a href="mailto://italopatriciosouza@hotmail.com">Ítalo Patrício</a></p> 
       </Footer>
     </ContainerApp>
   );
